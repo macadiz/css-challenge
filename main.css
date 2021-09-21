@@ -1,0 +1,75 @@
+@keyframes spinner {
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes loadingText {
+    0% {
+        content: "...";
+    }
+    25% {
+        content: "....";
+    }
+    50% {
+        content: ".....";
+    }
+    75% {
+        content: "....";
+    }
+    100% {
+        content: "...";
+    }
+}
+
+html {
+    font-family: Roboto;
+}
+
+#loadingWrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#loadingSpinner {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    background-image: linear-gradient(white, white), 
+                      conic-gradient(#163C4D, white);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    border: double 25px transparent;
+    border-radius: 50%;
+    animation: spinner 1.5s linear infinite;
+    -webkit-animation: spinner 1.5s linear infinite;
+    transform-origin: 64px 64px;
+}
+
+#loadingSpinner::after {
+    position: absolute;
+    content: "";
+    width: 12px;
+    height: 25px;
+    top: -25px;
+    left: 28px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    background: #163C4D;
+}
+
+#loadingText {
+    margin-top: 69px;
+    color: #ED546D;
+    font-size: 24px;
+    text-align: center;
+    display: block;
+}
+
+#loadingText::after {
+    content: "...";
+    animation: loadingText 1.5s linear infinite;
+    -webkit-animation: loadingText 1.5s linear infinite;
+}
