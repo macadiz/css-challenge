@@ -1,6 +1,4 @@
-### CSS Challenge #1
-
-## Loading spinner
+### Loading spinner
 
 This was made using pure HTML + CSS. No JS is required. Just open index.html with your favorite browser.
 
